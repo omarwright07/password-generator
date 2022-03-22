@@ -9,7 +9,7 @@
 // add a confirm/validate for the criteria prompts
 
 var specialCharacters = "terst";
-var password = "test";
+// var password = "test";/
 
 var generatePassword = function () {
   password = "lsjlkfdjslkfjl";
