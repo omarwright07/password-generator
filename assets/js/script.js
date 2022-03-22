@@ -2,16 +2,37 @@
 var passwordCriteria = {
 
 }
-var confirmCharacterLimit = false;
+var confirmCharacterLimit = 8;
 var confirmSpecialCharacters = false;
 var confirmUpperCase = false;
 var confirmLowerCase = false;
 
-var specialCharacters = "test";
-// specialCharacters.length;
+// Object that stores every type of character
+characters = {
+  letters: "abcdefghijklmnopqrstuvwxyz",
+  number: "0123456789",
+  special: " !#$%&()*+,-./:;<=>?@^_`{|}~",
+}
+
+// Function ---------------------------------------
+// Below is used to create random variables
+var randomNum = function (min,max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+var randomCharacter = function (cake) {
+  str = cake.charAt(randomNum(0,cake.length));
+  return str;
+}
+
+// variable.charAt();
 
 
-
+// Tools to enforce character limit:
+// Math.random;
+// Math.max;
+// Math.floor;
+// Math.floor(Math.random());
 
 // Function ---------------------------------------
 // Ask the user for parameters for the function generate Password
@@ -55,22 +76,51 @@ var promptCriteria = function () {
 // Used by the writePassword function
 var generatePassword = function () {
   //promptCriteria();
-  password = "test" + "this";
+  password = "";
+  while (password.length < confirmCharacterLimit) {
+    switch (randomNum(0,3)) {
+      // LowerCase
+      case 0:
+        if (confirmLowerCase) {
+          password = password + "0";
+          window.alert(password);
+        } else {
+        }
+        break;
+      // UpperCase
+      case 1:
+        password = password + "1";
+        window.alert(password);
+        break;
+      // Number
+      case 2:
+        password = password + "2";
+        window.alert(password);
+        break;
+      // SpecialCharacter
+      case 3:
+        password = password + "3";
+        window.alert(password);
+        break;
+      default:
+        password = password + "n";
+        window.alert(password);
+        break;
+    }
+  }
+  window.alert(password);
   return password;
 };
 
-for ()
+// for (){
+//   password = "";
+//   password = password + "0";
+//   ret
+// }
 
-
-
-// tools enforce character limit
-Math.random;
-Math.max;
-Math.floor;
-Math.floor(Math.random());
 
 // loop to generate password
-password = password + 
+// password = password + 
 
 
 
