@@ -1,5 +1,19 @@
 // Assignment code here
 
+// Tools for displaying info:
+// window.prompt("test");
+// window.alert("test");
+// window.confirm("test");
+
+// Tools to enforce character limit:
+// Math.random;
+// Math.max;
+// Math.floor;
+// [NEW] variable.charAt();
+// [NEW] Number();
+// [NEW] variable.length;
+// [NEW] "\n";
+
 // ####################################################
 // ####################################################
 //Object that stores the properties of the criteria
@@ -19,15 +33,6 @@ var characters = {
   special: "!#$%&()*+,-./:;<=>?@^_`{|}~",
 };
 
-// Tools to enforce character limit:
-// Math.random;
-// Math.max;
-// Math.floor;
-// [NEW] variable.charAt();
-// [NEW] Number();
-// [NEW] variable.length;
-// [NEW] "\n";
-
 // Function ---------------------------------------
 // Below is used to create random number from parameters
 var randomNum = function (min,max) {
@@ -38,14 +43,9 @@ var randomNum = function (min,max) {
 // Below is used to create random character from characters object
 var randomCharacter = function (charactersProperty) {
   randomPickedCharacter = charactersProperty.charAt(randomNum(0,charactersProperty.length));
-  window.alert(randomPickedCharacter);
+  // window.alert(randomPickedCharacter);
   return randomPickedCharacter;
 };
-
-// Tools for displaying info:
-// window.prompt("test");
-// window.alert("test");
-// window.confirm("test");
 
 // Function ---------------------------------------
 // Ask the user for parameters for the function generate Password
@@ -55,7 +55,7 @@ var setCharacterLimit = function () {
   if (typeof criteria.characterLimit === typeof 0 && criteria.characterLimit >= 8 && criteria.characterLimit <= 128) {
     window.alert("You set the character limit to: " + criteria.characterLimit); 
   } else {
-    window.alert("Please enter a number value between 8 and 128");
+    window.alert("Please enter a number valued between 8 and 128");
     setCharacterLimit();
   }
 };
@@ -69,9 +69,9 @@ var declareOtherCriteria = function() {
   criteria.specialCharacters = window.confirm("Do you want Special Characters?");
   if (criteria.lowerCase === false && criteria.upperCase === false && criteria.numbers === false && criteria.specialCharacters === false) {
       window.alert("Please set at least (1) criteria for the password!\n[Lower Case, Upper Case, Numbers, or Special Characters]");
-      declareCriteria();
+      declareOtherCriteria();
   } else {
-  window.alert("Criteria for password set! Generating password now!");
+  window.alert("Criteria for your password is set!\nGenerating password now...");
   }
 }
 
@@ -101,7 +101,6 @@ var generatePassword = function () {
         case 0:
           if (criteria.lowerCase) {
             password = password + randomCharacter(characters.letter);
-            window.alert(password);
             break;
           } else {
             break;
@@ -110,7 +109,6 @@ var generatePassword = function () {
         case 1:
           if (criteria.upperCase) {
             password = password + randomCharacter(characters.letter.toUpperCase());
-            window.alert(password);
             break;
           } else {
             break;
@@ -119,7 +117,6 @@ var generatePassword = function () {
         case 2:
           if (criteria.numbers) {
             password = password + randomCharacter(characters.number);
-            window.alert(password);
             break;
           } else {
             break;
@@ -128,7 +125,6 @@ var generatePassword = function () {
         case 3:
           if (criteria.specialCharacters) {
             password = password + randomCharacter(characters.special);
-            window.alert(password);
             break;
           } else {
             break;
@@ -139,7 +135,6 @@ var generatePassword = function () {
           break;
       }
     }
-    window.alert("Final password is: " + password);
     return password;
   } else {
     window.alert("No problem! Maybe next time.");
@@ -147,6 +142,7 @@ var generatePassword = function () {
     return password;
   }
 };
+
 // ####################################################
 // ####################################################
 
