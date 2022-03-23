@@ -29,7 +29,7 @@ The password can include special characters.
 ![Final verison mock up of the Password Generator.](./assets/images/03-javascript-homework-demo.png)
 
 ## Deployed Application
-<!-- https://omarwright07.github.io/horiseon-social-solutions -->
+https://omarwright07.github.io/password-generator/
 
 ## GitHub Location
-<!-- https://github.com/omarwright07/horiseon-social-solutions -->
+https://github.com/omarwright07/password-generator
